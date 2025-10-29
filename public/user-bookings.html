@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Bookings - Catering Management</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="container">
+      <div class="nav-brand">
+        <h2>🍽️ Delicious Catering</h2>
+      </div>
+      <ul class="nav-menu">
+        <li><a href="/index.html">Home</a></li>
+        <li><a href="/user-bookings.html" class="active">My Bookings</a></li>
+        <li><a href="#" onclick="logout()" class="btn-danger">Logout</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container" style="margin-top: 30px;">
+    <h2>My Bookings</h2>
+    
+    <div id="bookingsContainer">
+      <p>Loading your bookings...</p>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2024 Delicious Catering. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="/js/main.js"></script>
+  <script>
+    // Check auth
+    const token = localStorage.getItem('token');
+    const userEmail = localStorage.getItem('userEmail');
+
+    if (!token || !userEmail) {
+      alert('Please login to view bookings');
+      window.location.href = '/login.html';
+    }
+
+    loadUserBookings();
+
+    async function loadUserBookings() {
+      try {
+        const response = await fetch(`/api/booking/user/${userEmail}`, {
+          headers: {
+            'Authorization': 'Bearer ' + token
+          }
+        });
+
+        const data = await response.json();
+
+        if (data.success) {
+          displayUserBookings(data.bookings);
+        }
+      } catch (error) {
+        console.error('Error:', error);
+      }
+    }
+
+    function displayUserBookings(bookings) {
+      const container = document.getElementById('bookingsContainer');
+      
+      if (bookings.length === 0) {
+        container.innerHTML = '<div class="empty-state">No bookings found. <a href="/index.html">Book a service now!</a></div>';
+        return;
+      }
+
+      container.innerHTML = bookings.map(booking => `
+        <div class="booking-card">
+          <div class="booking-header">
+            <h3>${booking.serviceName}</h3>
+            <span class="badge badge-${booking.status.toLowerCase()}">${booking.status}</span>
+          </div>
+          <div class="booking-details">
+            <div class="booking-detail-item">
+              <strong>Event Date:</strong>
+              <span>${new Date(booking.eventDate).toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}</span>
+            </div>
+            <div class="booking-detail-item">
+              <strong>Number of Guests:</strong>
+              <span>${booking.guests}</span>
+            </div>
+            <div class="booking-detail-item">
+              <strong>Total Price:</strong>
+              <span class="price">₹${booking.totalPrice.toFixed(2)}</span>
+            </div>
+            ${booking.specialRequests ? `
+              <div class="booking-detail-item">
+                <strong>Special Requests:</strong>
+                <span>${booking.specialRequests}</span>
+              </div>
+            ` : ''}
+            <div class="booking-detail-item">
+              <strong>Booking Date:</strong>
+              <span>${new Date(booking.createdAt).toLocaleDateString()}</span>
+            </div>
+          </div>
+        </div>
+      `).join('');
+    }
+  </script>
+</body>
+</html>

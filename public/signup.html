@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign Up - Catering Management</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <div class="auth-container">
+    <div class="auth-card">
+      <h2>🍽️ Create Account</h2>
+      <p class="auth-subtitle">Join us to book amazing catering services</p>
+      
+      <form id="signupForm" class="auth-form">
+        <div class="form-group">
+          <label>Full Name:</label>
+          <input type="text" id="name" required>
+        </div>
+
+        <div class="form-group">
+          <label>Email:</label>
+          <input type="email" id="email" required>
+        </div>
+
+        <div class="form-group">
+          <label>Password:</label>
+          <input type="password" id="password" minlength="6" required>
+        </div>
+
+        <div class="form-group">
+          <label>Confirm Password:</label>
+          <input type="password" id="confirmPassword" minlength="6" required>
+        </div>
+
+        <button type="submit" class="btn-primary btn-block">Create Account</button>
+      </form>
+
+      <p class="auth-footer">
+        Already have an account? <a href="/login.html">Login here</a>
+      </p>
+      <p class="auth-footer">
+        <a href="/index.html">← Back to Home</a>
+      </p>
+    </div>
+  </div>
+
+  <script src="/js/main.js"></script>
+  <script>
+    document.getElementById('signupForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const password = document.getElementById('password').value;
+      const confirmPassword = document.getElementById('confirmPassword').value;
+
+      if (password !== confirmPassword) {
+        alert('Passwords do not match!');
+        return;
+      }
+
+      try {
+        const response = await fetch('/api/user/signup', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ name, email, password })
+        });
+
+        const data = await response.json();
+
+        if (data.success) {
+          alert('Account created successfully! Please login.');
+          window.location.href = '/login.html';
+        } else {
+          alert(data.message);
+        }
+      } catch (error) {
+        console.error('Error:', error);
+        alert('Signup failed');
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Catering Management - Home</title>
+  
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;900&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="container">
+      <div class="nav-brand">
+        <h2><img src="images/Rooba Catering Name & Logo.jpg" alt=""> Rooba's Catering</h2>
+      </div>
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="/index.html">Home</a></li>
+        <li><a href="/services.html">Services</a></li>
+        <li><a href="menu.pdf">Menu</a></li>
+        <li><a href="/events.html">Events</a></li>
+        <li><a href="/gallery.html">Gallery</a></li>
+        <li id="userNav" style="display: none;">
+          <a href="/user-bookings.html">My Bookings</a>
+        </li>
+        <li id="loginNav">
+          <a href="/login.html">Login</a>
+        </li>
+        <li id="signupNav">
+          <a href="/signup.html" class="btn-primary">Sign Up</a>
+        </li>
+        <li id="logoutNav" style="display: none;">
+          <a href="#" onclick="logout()" class="btn-danger">Logout</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+<!-- HERO / CAROUSEL -->
+  <header id="home" class="hero-carousel mb-5">
+    <div id="homeCarousel" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#homeCarousel" data-bs-slide-to="0" class="active"></button>
+        <button type="button" data-bs-target="#homeCarousel" data-bs-slide-to="1"></button>
+        <button type="button" data-bs-target="#homeCarousel" data-bs-slide-to="2"></button>
+      </div>
+
+      <div class="carousel-inner">
+        <!-- Slide 1: use provided local image (if you put the files in same folder, update path); fallback unsplash -->
+        <div class="carousel-item active" style="background-image: url('images/beautiful-romantic-elegant-wedding-decor-600nw-2269418443.webp');">
+          <div class="hero-overlay">
+            <div>
+              <div class="hero-title">Rooba's Catering Services</div>
+              <div class="hero-sub">Delicious food • Reliable service • Memorable events</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="carousel-item" style="background-image: url('images/image.png');">
+          <div class="hero-overlay">
+            <div>
+              <div class="hero-title">Taste Crafted with Love, Served with Perfection</div>
+              <div class="hero-sub">We turn your special moments into unforgettable memories with flavors that speak elegance.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 3 (online image) -->
+        <div class="carousel-item" style="background-image: url('images/20190112_134208.jpg');">
+          <div class="hero-overlay">
+            <div>
+              <div class="hero-title">Savor the Tradition, Celebrate the Occasion.</div>
+              <div class="hero-sub">From weddings to grand feasts — we bring authentic flavors with a modern flair.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <button class="carousel-control-prev" type="button" data-bs-target="#homeCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#homeCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+      </button>
+    </div>
+  </header>
+ <!-- Nero Section -->
+<section class="nero">
+  <div class="nero-overlay"></div>
+  <div class="container text-center nero-content">
+    <h1>Premium Catering Services</h1>
+    <p>Making your events memorable with delicious food and exceptional service</p>
+    <a href="#services" class="btn-primary btn-large">Explore Our Services</a>
+  </div>
+</section>
+
+
+  <!-- Services Section -->
+  <section id="services" class="services-section">
+  <div class="container">
+    <h2 class="section-title">Our Catering Services</h2>
+    <div id="servicesContainer" class="services-grid">
+      <div class="service-card">
+        <img src="images/20200226_150539.jpg" alt="Wedding Catering">
+        <div class="content">
+          <h3>Wedding Catering</h3>
+          <p>Elegant menus and seamless service to make your big day unforgettable.</p>
+          <div class="price">₹1500 per plate</div>
+          <button>Book Now</button>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <img src="images/20190721_115343.jpg" alt="Corporate Events">
+        <div class="content">
+          <h3>Corporate Events</h3>
+          <p>Professional catering for meetings, conferences, and office celebrations.</p>
+          <div class="price">₹1200 per plate</div>
+          <button>Book Now</button>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <img src="images/20200119_145755.jpg" alt="Private Parties">
+        <div class="content">
+          <h3>Private Parties</h3>
+          <p>Delicious food and perfect presentation for birthdays and get-togethers.</p>
+          <div class="price">₹1000 per plate</div>
+          <button>Book Now</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+    <!-- Contact Section -->
+<section id="contact" class="contact-section py-5">
+  <div class="container">
+    <h2 class="section-title text-center mb-4 text-warning">Contact Us</h2>
+    <p class="text-center text-light mb-5 fs-5">We’d love to hear from you — let’s make your event deliciously memorable!</p>
+
+    <div class="row g-4 align-items-stretch">
+      <!-- Contact Info Card -->
+      <div class="col-lg-5">
+        <div class="contact-card p-4 rounded-4 shadow-lg h-100">
+          <h4 class="mb-4 text-warning"><i class="fa-solid fa-comments me-2"></i> Get in Touch</h4>
+
+          <div class="info-item mb-3">
+            <i class="fa-solid fa-phone text-warning me-3"></i>
+            <div>
+              <strong>Phone:</strong> 
+              <a href="tel:+919894255502" class="text-white text-decoration-none d-block">+91 98942 55502</a>
+            </div>
+          </div>
+
+          <div class="info-item mb-3">
+            <i class="fa-solid fa-envelope text-warning me-3"></i>
+            <div>
+              <strong>Email:</strong> 
+              <a href="mailto:roobascatering@gmail.com" class="text-white text-decoration-none d-block">roobascatering@gmail.com</a>
+            </div>
+          </div>
+
+          <div class="info-item mb-4">
+            <i class="fa-solid fa-location-dot text-warning me-3"></i>
+            <div>
+              <strong>Address:</strong> 
+              <p class="mb-0">24A, Gandhi Street, Tiruchirappalli, Tamil Nadu, India</p>
+            </div>
+          </div>
+
+          <h5 class="text-warning mb-3"><i class="fa-solid fa-share-nodes me-2"></i> Follow Us</h5>
+          <div class="social-icons">
+            <a href="https://www.instagram.com" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://www.youtube.com" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+            <a href="https://www.facebook.com" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Google Map -->
+      <div class="col-lg-7">
+        <div class="map-wrapper rounded-4 shadow-lg overflow-hidden h-100">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3916.352083733865!2d78.686!3d10.7905!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3baaf50d7a8b5d91%3A0x4cb75d0bfb6dc2e!2sTiruchirappalli%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1698508200000!5m2!1sen!2sin"
+            width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy">
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p>All rights reservered</p>
+    </div>
+  </footer>
+<!-- FLOATING BUTTONS: stacked container (WhatsApp, Instagram, Top) -->
+  <div class="float-stack" role="navigation" aria-label="Quick contact">
+    <!-- Top / Scroll-to-top (visually above icons) -->
+    <a href="#" id="scrollToTopBtn" class="float-btn top" title="Back to Top">
+  <i class="fas fa-arrow-up"></i>
+</a>
+    <!-- Instagram floating -->
+    <a class="float-btn instagram" href="https://instagram.com" target="_blank" title="Instagram">
+      <i class="fa-brands fa-instagram"></i>
+    </a>
+
+    <!-- WhatsApp -->
+    <a class="float-btn" href="https://wa.me/919894255502" target="_blank" title="WhatsApp">
+      <i class="fa-brands fa-whatsapp"></i>
+    </a>
+  </div>
+  <!-- Booking Modal -->
+  <div id="bookingModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <h2>Book This Service</h2>
+      <form id="bookingForm">
+        <input type="hidden" id="bookingServiceId">
+        <input type="hidden" id="bookingServiceName">
+        <input type="hidden" id="bookingServicePrice">
+        
+        <div class="form-group">
+          <label>Event Date:</label>
+          <input type="date" id="eventDate" required>
+        </div>
+
+        <div class="form-group">
+          <label>Number of Guests:</label>
+          <input type="number" id="guests" min="10" required>
+        </div>
+
+        <div class="form-group">
+          <label>Special Requests (Optional):</label>
+          <textarea id="specialRequests" rows="3"></textarea>
+        </div>
+
+        <div class="form-group">
+          <label>Total Price: ₹<span id="totalPrice">0</span></label>
+        </div>
+
+        <button type="submit" class="btn-primary btn-block">Confirm Booking</button>
+      </form>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="/js/index.js"></script>
+  <script src="/js/main.js"></script>
+  <script>
+    loadServices();
+    checkAuth();
+
+    document.getElementById('guests')?.addEventListener('input', function() {
+      const guests = parseInt(this.value) || 0;
+      const price = parseFloat(document.getElementById('bookingServicePrice').value) || 0;
+      document.getElementById('totalPrice').textContent = (guests * price).toFixed(2);
+    });
+
+    document.getElementById('bookingForm')?.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      
+      const token = localStorage.getItem('token');
+      if (!token) {
+        alert('Please login to book a service');
+        window.location.href = '/login.html';
+        return;
+      }
+
+      const bookingData = {
+        serviceId: document.getElementById('bookingServiceId').value,
+        eventDate: document.getElementById('eventDate').value,
+        guests: document.getElementById('guests').value,
+        specialRequests: document.getElementById('specialRequests').value
+      };
+
+      try {
+        const response = await fetch('/api/booking/add', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': 'Bearer ' + token
+          },
+          body: JSON.stringify(bookingData)
+        });
+
+        const data = await response.json();
+
+        if (data.success) {
+          alert('Booking successful!');
+          closeModal();
+          window.location.href = '/user-bookings.html';
+        } else {
+          alert(data.message);
+        }
+      } catch (error) {
+        console.error('Error:', error);
+        alert('Failed to create booking');
+      }
+    });
+
+    function openBookingModal(serviceId, serviceName, servicePrice) {
+      const token = localStorage.getItem('token');
+      if (!token) {
+        alert('Please login to book a service');
+        window.location.href = '/login.html';
+        return;
+      }
+
+      document.getElementById('bookingServiceId').value = serviceId;
+      document.getElementById('bookingServiceName').value = serviceName;
+      document.getElementById('bookingServicePrice').value = servicePrice;
+      document.getElementById('bookingModal').style.display = 'block';
+      
+      const today = new Date().toISOString().split('T')[0];
+      document.getElementById('eventDate').setAttribute('min', today);
+    }
+
+    function closeModal() {
+      document.getElementById('bookingModal').style.display = 'none';
+      document.getElementById('bookingForm').reset();
+    }
+
+    window.onclick = function(event) {
+      const modal = document.getElementById('bookingModal');
+      if (event.target == modal) {
+        closeModal();
+      }
+    }
+  const topBtn = document.getElementById('scrollToTopBtn');
+
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 300) {
+      topBtn.classList.add('visible');
+    } else {
+      topBtn.classList.remove('visible');
+    }
+  });
+
+  topBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+  const menu = document.getElementById('mobile-menu');
+  const navLinks = document.getElementById('nav-links');
+
+  menu.addEventListener('click', () => {
+    navLinks.classList.toggle('show');
+  });
+
+  </script>
+</body>
+</html>
