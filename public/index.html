@@ -25,8 +25,9 @@
       </div>
       <ul class="nav-menu" id="navMenu">
         <li><a href="/index.html">Home</a></li>
-        <li><a href="/services.html">Services</a></li>
+        <li><a href="services.html">Services</a></li>
         <li><a href="menu.pdf">Menu</a></li>
+        <li><a href="about.html">About US</a></li>
         <li><a href="/events.html">Events</a></li>
         <li><a href="/gallery.html">Gallery</a></li>
         <li id="userNav" style="display: none;">
@@ -110,102 +111,89 @@
     <h2 class="section-title">Our Catering Services</h2>
     <div id="servicesContainer" class="services-grid">
       <div class="service-card">
-        <img src="images/20200226_150539.jpg" alt="Wedding Catering">
+        <img src="images/20190112_134935.jpg" alt="Wedding Catering">
         <div class="content">
           <h3>Wedding Catering</h3>
           <p>Elegant menus and seamless service to make your big day unforgettable.</p>
-          <div class="price">₹1500 per plate</div>
+          <div class="price">₹{{ service.rate }} per plate</div>
           <button>Book Now</button>
         </div>
       </div>
 
       <div class="service-card">
-        <img src="images/20190721_115343.jpg" alt="Corporate Events">
+        <img src="images/20190112_134937.jpg" alt="Corporate Events">
         <div class="content">
           <h3>Corporate Events</h3>
           <p>Professional catering for meetings, conferences, and office celebrations.</p>
-          <div class="price">₹1200 per plate</div>
+          <div class="price">₹{{ service.rate }} per plate</div>
           <button>Book Now</button>
         </div>
       </div>
 
       <div class="service-card">
-        <img src="images/20200119_145755.jpg" alt="Private Parties">
+        <img src="images/20200119_145720.jpg" alt="Private Parties">
         <div class="content">
           <h3>Private Parties</h3>
           <p>Delicious food and perfect presentation for birthdays and get-togethers.</p>
-          <div class="price">₹1000 per plate</div>
+          <div class="price">₹{{ service.rate }} per plate</div>
           <button>Book Now</button>
         </div>
       </div>
     </div>
   </div>
 </section>
+ <section class="contact-section">
+  <div class="contact-box">
+    <h2 class="section-title">Contact Us</h2>
+    <p class="intro">
+      Get in touch with <strong>Rooba’s Catering</strong> — we’re here to make your events truly unforgettable!
+    </p>
+    <ul class="contact-info">
+      <li><i class="fas fa-map-marker-alt icon"></i> Coimbatore, Tamil Nadu</li>
+      <li><i class="fas fa-phone icon"></i> +91 98942 55502</li>
+      <li><i class="fas fa-envelope icon"></i> roobascatering@gmail.com</li>
+      <li><i class="fas fa-clock icon"></i> Mon – Sat, 9 AM to 9 PM</li>
+    </ul>
+    <div class="social-icons">
+      <a href="https://www.instagram.com/roobas_catering__?igsh=MWRrbGtreGVmeW9wcw==" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="https://youtube.com/@roobascatering?si=I7ARZeve3dFp3D_P" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+      <a href="https://www.facebook.com/reel/1831663707745228/?app=fbl" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+    </div>
+  </div>
+  
+</section>
 
-    <!-- Contact Section -->
-<section id="contact" class="contact-section py-5">
-  <div class="container">
-    <h2 class="section-title text-center mb-4 text-warning">Contact Us</h2>
-    <p class="text-center text-light mb-5 fs-5">We’d love to hear from you — let’s make your event deliciously memorable!</p>
-
-    <div class="row g-4 align-items-stretch">
-      <!-- Contact Info Card -->
-      <div class="col-lg-5">
-        <div class="contact-card p-4 rounded-4 shadow-lg h-100">
-          <h4 class="mb-4 text-warning"><i class="fa-solid fa-comments me-2"></i> Get in Touch</h4>
-
-          <div class="info-item mb-3">
-            <i class="fa-solid fa-phone text-warning me-3"></i>
-            <div>
-              <strong>Phone:</strong> 
-              <a href="tel:+919894255502" class="text-white text-decoration-none d-block">+91 98942 55502</a>
-            </div>
-          </div>
-
-          <div class="info-item mb-3">
-            <i class="fa-solid fa-envelope text-warning me-3"></i>
-            <div>
-              <strong>Email:</strong> 
-              <a href="mailto:roobascatering@gmail.com" class="text-white text-decoration-none d-block">roobascatering@gmail.com</a>
-            </div>
-          </div>
-
-          <div class="info-item mb-4">
-            <i class="fa-solid fa-location-dot text-warning me-3"></i>
-            <div>
-              <strong>Address:</strong> 
-              <p class="mb-0">24A, Gandhi Street, Tiruchirappalli, Tamil Nadu, India</p>
-            </div>
-          </div>
-
-          <h5 class="text-warning mb-3"><i class="fa-solid fa-share-nodes me-2"></i> Follow Us</h5>
-          <div class="social-icons">
-            <a href="https://www.instagram.com" target="_blank"><i class="fa-brands fa-instagram"></i></a>
-            <a href="https://www.youtube.com" target="_blank"><i class="fa-brands fa-youtube"></i></a>
-            <a href="https://www.facebook.com" target="_blank"><i class="fa-brands fa-facebook"></i></a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Google Map -->
-      <div class="col-lg-7">
-        <div class="map-wrapper rounded-4 shadow-lg overflow-hidden h-100">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3916.352083733865!2d78.686!3d10.7905!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3baaf50d7a8b5d91%3A0x4cb75d0bfb6dc2e!2sTiruchirappalli%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1698508200000!5m2!1sen!2sin"
-            width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy">
-          </iframe>
-        </div>
-      </div>
+<!-- Map Section -->
+<section class="map-section">
+  <div class="map-wrapper container">
+    <h2 class="section-title">Find Us</h2>
+    <p class="section-subtitle">Rooba's Catering — Coimbatore, Tamil Nadu</p>
+    <div class="map-container">
+      <!-- Simple embedded map (no API key required). Adjust query as needed. -->
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3910.477716316458!2d76.991!3d11.0168!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTHCsDAxJzAwLjUiTiA3NsKwNTknMzAuMCJF!5e0!3m2!1sen!2sin!4v1719300000000" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
   </div>
 </section>
 
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="container">
-      <p>All rights reservered</p>
+ <footer class="site-footer">
+  <div class="footer-container">
+    <div class="footer-brand">
+      <h2>Rooba’s Catering</h2>
+      <p>Delicious food • Reliable service • Memorable events</p>
     </div>
-  </footer>
+    <div class="footer-links">
+      <a href="/index.html">Home</a>
+      <a href="/services.html">Services</a>
+      <a href="/events.html">Events</a>
+      <a href="/gallery.html">Gallery</a>
+      <a href="/privacypolicy.html">Privacy Policy</a>
+    </div>
+    <div class="footer-copy">
+      <p>© 2025 Rooba’s Catering. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
 <!-- FLOATING BUTTONS: stacked container (WhatsApp, Instagram, Top) -->
   <div class="float-stack" role="navigation" aria-label="Quick contact">
     <!-- Top / Scroll-to-top (visually above icons) -->
